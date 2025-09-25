@@ -38,7 +38,7 @@ export default function AboutUs() {
         {/* Left Image */}
         <div className="relative w-full lg:w-[730px] h-[760px]">
           <Image
-            src="/images/about-team.jpg"
+            src="/images/about-left.jpg"
             alt="MedPack Team"
             fill
             className="object-cover rounded-2xl shadow-2xl"
@@ -47,14 +47,14 @@ export default function AboutUs() {
 
         {/* Right Text */}
         <div className="lg:pl-12 mt-8 lg:mt-0 flex-1">
-          <p className="font-poppins font-bold text-[20px] leading-[38px] text-gray-900">
-            Welcome to MedPack - the registered company revolutionizing Africa's
+          <p className="font-poppins font text-[20px] leading-[38px] text-gray-900">
+            <span className=" font-bold ">Welcome to MedPack -</span> the registered company revolutionizing Africa's
             pharmaceutical supply chain through information technology. We aim
             to empower individuals by providing seamless primary healthcare
             delivery through health facilities, all enabled by our cutting-edge
             technology.
           </p>
-          <p className="font-poppins font-bold text-[20px] leading-[38px] text-gray-900 mt-4">
+          <p className="font-poppins font text-[20px] leading-[38px] text-gray-900 mt-4">
             We partner with well-stocked pharmaceutical suppliers to deliver B2B,
             and with registered pharmacies across cities to deliver B2C. Our
             business customers include clinics, dispensaries, accredited drug
@@ -98,7 +98,7 @@ export default function AboutUs() {
       {/* Blue Banner */}
       <section className="w-full max-w-[1440px] mx-auto h-[175px] bg-[#0B7CD0] flex items-center justify-center px-4">
         <h2 className="font-poppins font-medium text-[40px] leading-[38px] text-center text-white">
-          Your healthcare needs, simplified
+          "Your healthcare needs, simplified"
         </h2>
       </section>
 
@@ -134,7 +134,7 @@ export default function AboutUs() {
       </section>
 
       {/* Footer */}
-      
+
       <Footer />
     </div>
   );
