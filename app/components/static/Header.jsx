@@ -2,13 +2,23 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "../ui/Button";
-import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigationItems = ["Products", "About Us", "Stories", "Blog", "Contacts"];
+  const pathname = usePathname();
+
+  const navigationItems = [
+    { name: "Products", href: "/products" },
+    { name: "About Us", href: "/about" },
+    { name: "Stories", href: "/stories" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contacts", href: "/contact" },
+    { name: "Partners Portal", href: "/partners" },
+  ];
 
   return (
     <header className="w-full h-[100px] bg-white shadow-custom relative">
@@ -19,36 +29,58 @@ export default function Header() {
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
           <div className="relative w-40 h-12 drop-shadow-sm">
-            <Image
-              src="/logo.png"
-              alt="MEDPACK Logo"
-              fill
-              className="object-contain"
-              priority
-            />
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="MEDPACK Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLinks items={navigationItems} className="space-x-8" />
+            {navigationItems.map((item) => {
+              const isActive = pathname === item.href;
 
-            <Button
-              variant="primary"
-              className="w-[201px] h-[45px] rounded-[30px] text-base font-semibold"
-              style={{ background: "#F72D3C" }}
-            >
-              Partners Portal
-            </Button>
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`text-base font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 border-b-2 border-blue-600"
+                      : "text-gray-700 hover:text-blue-600"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+
+            <Link href="/partners">
+              <Button
+                variant="primary"
+                className="w-[201px] h-[45px] rounded-[30px] text-base font-semibold"
+                style={{ background: "#F72D3C" }}
+              >
+                Partners Portal
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            <Button
-              variant="primary"
-              className="text-sm px-4 py-2 hidden sm:block shadow-md"
-            >
-              Portal
-            </Button>
+            <Link href="/partners">
+              <Button
+                variant="primary"
+                className="text-sm px-4 py-2 shadow-md"
+              >
+                Portal
+              </Button>
+            </Link>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 rounded-lg transition-all duration-200 hover:bg-gray-100 shadow-sm hover:shadow-md"
@@ -76,11 +108,12 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu component */}
+      {/* Mobile menu */}
       <MobileMenu
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}
         items={navigationItems}
+        activePath={pathname}
       />
     </header>
   );
