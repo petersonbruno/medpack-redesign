@@ -13,7 +13,10 @@ module.exports = {
       },
       maxWidth: {
         '1440': '1440px',
-      }
+      },
+      backgroundImage: {
+        'custom-gradient': "linear-gradient(112.96deg, rgba(248, 248, 248, 0) 0%, #0B7CD0 59.31%)",
+      },
     },
   },
   plugins: [],
