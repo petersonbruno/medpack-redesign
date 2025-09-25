@@ -1,12 +1,17 @@
-// app/layout.js
+// app/layout.tsx
 import './globals.css'
+import { ReactNode } from 'react'
 
 export const metadata = {
   title: 'MEDPACK - Revolutionizing Healthcare Delivery',
-  description: 'Get your medication hassle-free with Medpack\'s innovative solutions for health facilities.',
+  description: "Get your medication hassle-free with Medpack's innovative solutions for health facilities.",
 }
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head>
