@@ -20,7 +20,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[rgba(240,248,255,1)]">
       {/* Header */}
       <Header />
 

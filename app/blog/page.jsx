@@ -25,12 +25,12 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[rgba(240,248,255,1)]">
       {/* Header */}
       <Header />
 
       {/* Blog Grid */}
-      <section className="max-w-[1440px]  mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {blogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
