@@ -1,6 +1,6 @@
-// app/layout.tsx
 import './globals.css'
 import { ReactNode } from 'react'
+import ClientLayout from './ClientLayout'
 
 export const metadata = {
   title: 'MEDPACK - Revolutionizing Healthcare Delivery',
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className="bg-[#CFD2D4] font-poppins">
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   )
