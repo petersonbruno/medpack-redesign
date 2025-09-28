@@ -110,7 +110,7 @@ export default function AboutUs() {
       </section>
 
       {/* Team Image Background Section with Gradient */}
-      <section className="relative w-full max-w-[1440px] mx-auto h-[883px] mt-8">
+      <section className="relative w-full max-w-[1440px] mx-auto h-[883px]  mt-8">
         <Image
           src="/images/team-background.jpg"
           alt="Our Team Background"
@@ -125,7 +125,7 @@ export default function AboutUs() {
               "linear-gradient(180deg, rgba(11, 124, 208, 0.33) 15.97%, #0B7CD0 100%)",
           }}
         ></div>
-        <div className="absolute inset-0 flex items-center justify-center px-4">
+        <div className="absolute inset-0 flex items-end justify-center pb-4 px-4 ">
           <p className="font-poppins font-medium text-[32px] leading-[100%] text-white text-center">
             We are a diverse and experienced team dedicated to improving access
             to healthcare in Africa with technology.
