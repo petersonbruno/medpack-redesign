@@ -6,45 +6,53 @@ const howItWorksSteps = [
   {
     id: 1,
     title: "Sign Up",
-    icon :"/icons/signup.png",
+    icon: "/icons/signup.png",
     description: "Create your MedPack account to access healthcare services.",
   },
   {
     id: 2,
     title: "Home",
+    icon: "/icons/home.png",
     description: "Browse the platform for healthcare options tailored to you.",
   },
   {
     id: 3,
     title: "Prescription",
+    icon: "/icons/prescription.png",
     description: "Upload or request prescriptions quickly and securely.",
   },
   {
     id: 4,
     title: "Explore Products",
+    icon: "/icons/products.png",
     description: "Find and order a wide range of medical and health products.",
   },
   {
     id: 5,
     title: "Delivery",
+    icon: "/icons/delivery.png",
     description: "Get your medicines and products delivered to your doorstep.",
   },
   {
     id: 6,
     title: "Payments",
+    icon: "/icons/payments.png",
     description: "Pay securely online through multiple payment options.",
   },
   {
     id: 7,
     title: "My Dose",
+    icon: "/icons/dose.png",
     description: "Track your medications and manage your daily doses.",
   },
   {
     id: 8,
     title: "Health Tips",
+    icon: "/icons/tips.png",
     description: "Receive helpful tips and reminders for healthier living.",
   },
 ];
+
 const patientFeatures = [
   {
     id: 1,
@@ -155,14 +163,20 @@ export default function ProductsPage() {
             {howItWorksSteps.map((step) => (
               <div key={step.id} className="flex gap-4 items-start">
                 {/* Number + Icon */}
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#0B7CD0] text-white text-xl">
-                  {step.icon}
+                <div className="flex items-center justify-center w-12 h-12 rounded-full text-white text-xl">
+                  <Image
+                    src={step.icon}
+                    alt={step.title}
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                  />
                 </div>
 
                 {/* Step Details */}
                 <div>
                   <h3 className="font-poppins font-semibold text-lg text-gray-900 flex items-center gap-2">
-                    <span className="text-[#0B7CD0] font-bold">{step.id}.</span>{" "}
+                    <span className="text-[#0B7CD0] font-bold">{step.id}.</span>
                     {step.title}
                   </h3>
                   <p className="font-poppins text-sm text-gray-600 leading-relaxed">

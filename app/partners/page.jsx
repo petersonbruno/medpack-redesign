@@ -123,8 +123,7 @@ export default function PartnersPortal() {
                   className="w-full bg-[#0B7CD0] text-white py-3 rounded-lg font-poppins font-semibold text-lg hover bg-[#0B7CD0] transition-colors shadow-lg"
                   style={{
                     borderRadius: "30px",
-                    height: "45px",
-                    width: "150px",
+                    width: "100px",
                   }}
                 >
                   Login
